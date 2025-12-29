@@ -1,6 +1,5 @@
 import * as _pinternals from 'pareto-core-internals'
 import * as _pix from 'pareto-core-interface'
-import { create_asynchronous_processes_monitor } from "./create_asynchronous_processes_monitor"
 import { __create_query_result } from './create_query_result'
 
 
@@ -16,7 +15,7 @@ export namespace dictionary {
             const errors_builder = _pinternals.create_asynchronous_dictionary_builder<Entry_Error>()
             const results_builder = _pinternals.create_asynchronous_dictionary_builder<Result>()
 
-            create_asynchronous_processes_monitor(
+            _pinternals.create_asynchronous_processes_monitor(
                 (monitor) => {
                     dictionary.map(($, key) => {
                         monitor['report process started']()
@@ -52,7 +51,7 @@ export namespace dictionary {
             const errors_builder = _pinternals.create_asynchronous_dictionary_builder<Error>()
             const results_builder = _pinternals.create_asynchronous_dictionary_builder<Result>()
 
-            create_asynchronous_processes_monitor(
+            _pinternals.create_asynchronous_processes_monitor(
                 (monitor) => {
                     $.map(($, key) => {
                         monitor['report process started']()
