@@ -18,7 +18,7 @@ type Queryer<Output, Error, Input> = (
 
 type Refiner<Output, Error, Input> = (
     $: Input,
-) => _pi.Refinement_Result<Output, Error>
+) => _pi.Deprecated_Refinement_Result<Output, Error>
 
 class Query_Result_Class<Output, Error> implements _pi.Query_Result<Output, Error> {
     private executer: Executer<Output, Error>
