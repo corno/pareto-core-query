@@ -1,5 +1,5 @@
 import * as _pi from "pareto-core-interface"
-
+import * as _pinternals from "pareto-core-internals"
 
 /**
  * this function contains the body in which the async value or error is executed
@@ -92,13 +92,13 @@ class Query_Result_Class<Output, Error> implements _pi.Query_Result<Output, Erro
     }
 
 
-    deprecated_refine_old_without_error_transformation<New_Output>(
-        refiner: Refiner<New_Output, Error, Output>
+    refine_without_error_transformation<New_Output>(
+        callback: ($: Output, abort: _pi.Abort<Error>) => New_Output,
     ): _pi.Query_Result<New_Output, Error> {
         return new Query_Result_Class<New_Output, Error>((on_result, on_error) => {
             this.executer(
                 ($) => {
-                    refiner($).__extract_data(
+                    _pinternals.deprecated_create_refinement_context<New_Output, Error>((abort) => callback($, abort)).__extract_data(
                         on_result,
                         on_error,
                     )
@@ -108,14 +108,14 @@ class Query_Result_Class<Output, Error> implements _pi.Query_Result<Output, Erro
         })
     }
 
-    deprecated_refine_old<New_Output, Refiner_Error>(
-        refiner: Refiner<New_Output, Refiner_Error, Output>,
+    refine<New_Output, Refiner_Error>(
+        callback: ($: Output, abort: _pi.Abort<Refiner_Error>) => New_Output,
         error_transformer: _pi.Transformer<Refiner_Error, Error>,
     ): _pi.Query_Result<New_Output, Error> {
         return new Query_Result_Class<New_Output, Error>((on_result, on_error) => {
             this.executer(
                 ($) => {
-                    refiner($).__extract_data(
+                    _pinternals.deprecated_create_refinement_context<New_Output, Refiner_Error>((abort) => callback($, abort)).__extract_data(
                         on_result,
                         (stager_error) => {
                             on_error(error_transformer(stager_error))
