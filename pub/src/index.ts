@@ -9,6 +9,9 @@ export {
     cc,
     au,
     ss,
+
+    list_literal,
+    dictionary_literal,
 } from "pareto-core-internals"
 
 export * from "./actions"
