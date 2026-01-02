@@ -10,6 +10,8 @@ export {
     au,
     ss,
 
+    set,
+    not_set,
     list_literal,
     dictionary_literal,
 } from "pareto-core-internals"
