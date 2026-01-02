@@ -12,6 +12,6 @@ export {
 } from "pareto-core-internals"
 
 export * from "./actions"
-export * from "./create_query_function"
-export * from "./create_query_result"
-export * from "./create_query"
+export * from "./query_function"
+export * from "./query_result"
+export * from "./query"

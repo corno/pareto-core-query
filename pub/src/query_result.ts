@@ -157,7 +157,7 @@ class Query_Result_Class<Output, Error> implements _pi.Query_Result<Output, Erro
 }
 
 
-export function __create_query_result<T, E>(
+export function __query_result<T, E>(
     executer: Executer<T, E>,
 ): _pi.Query_Result<T, E> {
     return new Query_Result_Class<T, E>(executer)

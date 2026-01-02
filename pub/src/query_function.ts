@@ -1,12 +1,12 @@
 import * as _pi from 'pareto-core-interface'
 
-import { __create_query } from "./create_query"
+import { __query } from "./query"
 
-export const create_query_function = <Result, Error, Parameters, Queries>(
+export const query_function = <Result, Error, Parameters, Query_Resources>(
     handler: (
         $p: Parameters,
-        $q: Queries,
+        $q: Query_Resources,
     ) => _pi.Query_Result<Result, Error>
-): _pi.Query_Function<_pi.Query<Result, Error, Parameters>, Queries> => {
+): _pi.Query_Function<_pi.Query<Result, Error, Parameters>, Query_Resources> => {
     return ($q) => ($p, error_transformer) => handler($p, $q).deprecated_transform_error(error_transformer)
 }
