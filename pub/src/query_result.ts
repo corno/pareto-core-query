@@ -16,10 +16,6 @@ type Queryer<Output, Error, Input> = (
     $: Input,
 ) => _pi.Query_Result<Output, Error>
 
-type Refiner<Output, Error, Input> = (
-    $: Input,
-) => _pi.Deprecated_Refinement_Result<Output, Error>
-
 class Query_Result_Class<Output, Error> implements _pi.Query_Result<Output, Error> {
     private executer: Executer<Output, Error>
     constructor(executer: Executer<Output, Error>) {
@@ -98,7 +94,7 @@ class Query_Result_Class<Output, Error> implements _pi.Query_Result<Output, Erro
         return new Query_Result_Class<New_Output, Error>((on_result, on_error) => {
             this.executer(
                 ($) => {
-                    _pinternals.deprecated_create_refinement_context<New_Output, Error>((abort) => callback($, abort)).__extract_data(
+                    _pinternals.create_refinement_context<New_Output, Error>((abort) => callback($, abort)).__extract_data(
                         on_result,
                         on_error,
                     )
