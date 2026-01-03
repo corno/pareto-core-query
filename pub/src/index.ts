@@ -10,11 +10,25 @@ export {
     au,
     ss,
 
-    set,
-    not_set,
-    list_literal,
-    dictionary_literal,
 } from "pareto-core-internals"
+
+export namespace optional {
+
+    export const set = _pinternals.optional_set
+    export const not_set = _pinternals.optional_not_set
+}
+
+export namespace list {
+
+    export const literal = _pinternals.list_literal
+
+}
+
+export namespace dictionary {   
+
+    export const literal = _pinternals.dictionary_literal
+
+}
 
 export * from "./actions"
 export * from "./query_function"
