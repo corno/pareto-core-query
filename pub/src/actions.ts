@@ -3,7 +3,7 @@ import * as _pi from 'pareto-core-interface'
 import { __query_result } from './query_result'
 
 
-export namespace dictionary {
+export namespace dictionaryx {
 
     export const parallel = <Result, Error, Entry_Error>(
         dictionary: _pi.Dictionary<_pi.Query_Result<Result, Entry_Error>>,
