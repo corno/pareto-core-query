@@ -1,6 +1,6 @@
 {
   "name": "pareto-core-query",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "license": "ISC",
   "description": "the exupery core package for developing query algorithms",
   "author": "Corno",
