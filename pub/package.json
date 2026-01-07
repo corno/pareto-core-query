@@ -18,7 +18,7 @@
     "dist"
   ],
   "dependencies": {
-    "pareto-core-internals": "^0.24.34"
+    "pareto-core-internals": "^0.24.35"
   },
   "repository": {
     "type": "git",
