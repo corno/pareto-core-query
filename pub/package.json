@@ -1,6 +1,6 @@
 {
   "name": "pareto-core-query",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "license": "ISC",
   "description": "the exupery core package for developing query algorithms",
   "author": "Corno",
@@ -18,7 +18,7 @@
     "dist"
   ],
   "dependencies": {
-    "pareto-core-internals": "^0.25.0"
+    "pareto-core-internals": "^0.25.3"
   },
   "repository": {
     "type": "git",

@@ -1,1 +1,1 @@
-export * from "pareto-core-internals/dist/algorithm_types/query"
+export * from "pareto-core-internals/dist/query"
